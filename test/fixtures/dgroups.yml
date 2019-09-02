@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  time: 2019-08-31 16:15:58
+  day: 1
+  chapter: one
+  location: 1
+  gender: 1
+
+two:
+  time: 2019-08-31 16:15:58
+  day: 1
+  chapter: two
+  location: 1
+  gender: 1
