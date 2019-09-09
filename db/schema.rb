@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 2019_09_01_191222) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "chapters", force: :cascade do |t|
     t.string "school", null: false
     t.datetime "created_at", precision: 6, null: false
@@ -19,8 +22,8 @@ ActiveRecord::Schema.define(version: 2019_09_01_191222) do
   end
 
   create_table "connections", force: :cascade do |t|
-    t.integer "user_id", null: false
-    t.integer "dgroup_id", null: false
+    t.bigint "user_id", null: false
+    t.bigint "dgroup_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["dgroup_id"], name: "index_connections_on_dgroup_id"
@@ -30,7 +33,7 @@ ActiveRecord::Schema.define(version: 2019_09_01_191222) do
   create_table "dgroups", force: :cascade do |t|
     t.time "time", null: false
     t.integer "day", null: false
-    t.integer "chapter_id", null: false
+    t.bigint "chapter_id", null: false
     t.integer "location", null: false
     t.integer "gender", null: false
     t.datetime "created_at", precision: 6, null: false
@@ -45,7 +48,7 @@ ActiveRecord::Schema.define(version: 2019_09_01_191222) do
     t.string "email", null: false
     t.integer "gender", null: false
     t.integer "status", default: 0
-    t.integer "chapter_id", null: false
+    t.bigint "chapter_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "type", default: 0
